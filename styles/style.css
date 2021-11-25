@@ -1,0 +1,18 @@
+* {
+    font-family: 'Source Code Pro', sans-serif;
+}
+
+.primary-color {
+    color: #0054a3;
+}
+
+.container {
+    width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    width: 100px;
+}
