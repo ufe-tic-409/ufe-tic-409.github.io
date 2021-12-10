@@ -2,12 +2,12 @@
     font-family: 'Source Code Pro', sans-serif;
 }
 
-.primary-color {
+.primary-color, a {
     color: #0054a3;
 }
 
 .container {
-    width: 500px;
+    max-width: 800px;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -15,4 +15,19 @@
 
 .logo {
     width: 100px;
+}
+
+h4 {
+    color: #0054a3;
+}
+
+.starter-code {
+    background-color: #0054a3;
+    margin: 20px 0;
+}
+
+.starter-code a {
+    display: block;
+    padding: 10px;
+    color: white;
 }
