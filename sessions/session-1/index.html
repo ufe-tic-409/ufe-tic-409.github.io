@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Session 1 - Creational Patterns</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <link rel="stylesheet" href="./styles/reset.css" /> -->
+    <link rel="stylesheet" href="../../styles/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div style="display: flex; flex-direction: row; align-items: center; margin-bottom: 50px;">
+        <img
+          class="logo"
+          src="../../assets/ufe-logo.png"
+          alt="UFE Logo"
+          style="margin-right: 10px"
+        />
+        <div style="display: flex; flex-direction: column">
+          <h1 style="margin-bottom: 0;" class="primary-color">TIC 409 Advanced OOP</h1>
+          <h2 style="margin-top: 0;" class="primary-color">Creational patterns</h2>
+        </div>
+      </div>
+      <div>
+        <h3>🏭 Abstract factory pattern (aka. Kit)</h3>
+        <div>
+            <h4>Intent</h4>
+            <blockquote>
+                Provide an interface for creating families of related or dependent objects without specifying their concrete classes
+            </blockquote>
+        </div>
+        <div>
+            <h4>Diagram</h4>
+            <img src="./assets/abstract-factory.png" alt="Abstract factory diagram">
+        </div>
+        <div>
+            <h4>Example</h4>
+            <p>
+                Let's say you are creating a simple game. In the game, the player can do 3 actions: <strong>attack</strong>, <strong>travel</strong>, <strong>visit a friend</strong>. The game can have multiple different settings : <strong>Medieval</strong>, <strong>Futuristic</strong> and depending on the style chosen, different classes are used.
+            </p>
+            <small>
+                <i>For example: When traveling, if you are using the medieval setting, you will be using a horse, however, if you are using the Futuristic setting, you will use a spaceship. Same when attacking, if you attack in medieval, you attack with a sword, however, if you are using the Futuristic setting, you will use a Laser Sabre.</i>
+            </small>
+            <div class="starter-code">
+                <a href="https://github.com/kagawish/design-patterns-examples/tree/0.2/src/main/java/io/gawish/abstractfactory">Starter code</a>
+            </div>
+            <h5>Questions</h5>
+            <ol>
+                <li>Start by copying the start code and reading it. What do you think about the code structure ?</li>
+                <li>Let's assume we wanted to add a new setting : <strong>Modern (Car, MachineGun)</strong>. Start by adding the necessary classes.</li>
+                <li>Do the necessary changes have a working program. How hard was it to integrate a new setting ? <a href="https://github.com/kagawish/design-patterns-examples/tree/0.3/src/main/java/io/gawish/abstractfactory">[code]</a></li>
+                <li>Refactor the code by using the Abstract Factory pattern to remove redundancies and improve code flexibility <a href="https://github.com/kagawish/design-patterns-examples/tree/0.4/src/main/java/io/gawish/abstractfactory">[code]</a></li>
+                <li>
+                    <strong class="primary-color">[Optional - Concrete fallback variation]</strong> How to make it so that you don't have to implement all the methods in the abstract factory ?
+                </li>
+                <li>
+                    <strike><strong class="p</strike>rimary-color">[Optional - Extensible factories variation]</strong> How to make your factories generic so that you don't have to create a factory method for each type of class ?</strike>
+                </li>
+            </ol>
+        </div>
+      </div>
+      <hr style="width: 100%; margin: 50px 0;">
+      <div>
+        <h3>🏗 Builder pattern</h3>
+        <div>
+            <h4>Intent</h4>
+            <blockquote>
+                Separate the construction of a complex object from its representation so that the same construction process can create different representations.
+            </blockquote>
+        </div>
+        <div>
+            <h4>Diagram</h4>
+            <img src="./assets/builder.png" alt="Buider diagram">
+        </div>
+        <div>
+            <h4>Example</h4>
+            <p>
+                Let's say you are building a sci-fi simulation game. In the game, you can create a <strong>Spacebase</strong> and each spacebase can have multiple <strong>Electricity Generators</strong>, <strong>Water Plants</strong> and <strong>Houses</strong>.
+            </p>
+            <small>
+                <i>For example: A spacebase can have 2 Electricity Generators, 2 Water Plants and 5 Houses.</i>
+            </small>
+            <div class="starter-code">
+                <a href="https://github.com/kagawish/design-patterns-examples/tree/0.5/src/main/java/io/gawish/builder">Starter code</a>
+            </div>
+            <h5>Questions</h5>
+            <ol>
+                <li>Start by copying the start code and reading it. What do you think about the code structure ?</li>
+                <li>How can we hide the complexity of creating a Spacebase using constructors ? What do you think about this solution ?</li>
+                <li>How can we refactor the code implementing the Builder pattern to hide the complexity ? <a href="https://github.com/kagawish/design-patterns-examples/tree/0.7/src/main/java/io/gawish/builder">[code]</a></li>
+                <li>
+                    <strong class="primary-color">[Optional - Director variation]</strong> Implement the director variation to facilitate the Spacebase creation process even further.
+                </li>
+                <li>
+                    <strong class="primary-color">[Optional - Fluent variation]</strong> Can you implement a <a href="https://en.wikipedia.org/wiki/Fluent_interface">fluent interface</a> for the builder to enable function chaining ?
+                </li>
+            </ol>
+        </div>
+      </div>
+      <hr style="width: 100%; margin: 50px 0;">
+      <div>
+        <h3>🌟 Singleton pattern</h3>
+        <div>
+            <h4>Intent</h4>
+            <blockquote>
+                Ensure a class has only one instance and provide a global point of access to it.
+            </blockquote>
+        </div>
+        <div>
+            <h4>Diagram</h4>
+            <img src="./assets/singleton.png" alt="Singleton diagram">
+        </div>
+        <div>
+            <h4>Example</h4>
+            <p>
+                Starting with the code implemented on the Builder pattern, in this example, you will have to implement a Logger class that will be used by all the different classes to generate log messages.
+            </p>
+            <div class="starter-code">
+                <a href="https://github.com/kagawish/design-patterns-examples/tree/0.9/src/main/java/io/gawish/singleton">Starter code</a>
+            </div>
+            <h5>Questions</h5>
+            <ol>
+                <li>Start by copying the start code and reading it. What do you think about the code structure ?</li>
+                <li>How can you make it easier to access the Logger without having to pass it to each class ?</li>
+                <li>
+                    <strong class="primary-color">[Optional - Eager creation variation]</strong> Implement the eager creation variation of the singleton on a <strong>Sound</strong> singleton class.
+                </li>
+                <li>
+                    <strike><strong class="primary-color">[Optional - Registry variation]</strong> How can you implement multiple different loggers that log to different outputs ?</strike>
+                </li>
+            </ol>
+        </div>
+      </div>
+      <hr style="width: 100%; margin: 50px 0;">
+      <div>
+        <h3>🛠 Factory method pattern</h3>
+        <div>
+            <h4>Intent</h4>
+            <blockquote>
+                Define an interface for creating an object, but let subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses.
+            </blockquote>
+        </div>
+        <div>
+            <h4>Diagram</h4>
+            <img src="./assets/factory-method.png" alt="Factory method diagram">
+        </div>
+        <div>
+            <h4>Example</h4>
+            <div class="starter-code">
+                <a href="https://github.com/kagawish/design-patterns-examples/tree/0.10/src/main/java/io/gawish/factorymethod">Starter code</a>
+            </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
