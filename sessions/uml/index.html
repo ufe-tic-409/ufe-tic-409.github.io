@@ -171,15 +171,8 @@
                             <div class="text-base font-bold">
                                 Diagram
                             </div>
-                            <div class="mermaid fragment p-2">
-                                classDiagram
-                                    class Book {
-                                        +title : String 
-                                        -author : String
-                                        #nbPages : int
-                                        &tilde;synopsis : String
-                                        int nbBooks$
-                                    }
+                            <div class="fragment p-2">
+                                <img src="./assets/mermaid/diagram-1.png" />
                             </div>
                         </div>
                     </div>
@@ -244,14 +237,8 @@
                             <div class="text-base font-bold">
                                 Diagram
                             </div>
-                            <div class="mermaid p-2">
-                                classDiagram
-                                    class Book {
-                                        +addPage(Page)
-                                        +removePage(Page)
-                                        +copyBook() Book
-                                        +totalCount()$ int
-                                    }
+                            <div class="p-2">
+                                <img src="./assets/mermaid/diagram-2.png" />
                             </div>
                         </div>
                     </div>
@@ -261,16 +248,8 @@
                     <div class="flex flex-col items-stretch">
                         <div class="text-sm px-5 space-y-3 text-left">
                             <div class="bg-white p-2 rounded-md text-lg">
-                                <div class="mermaid p-2">
-                                    classDiagram
-                                        classA --|> classB : Inheritance (generalization)
-                                        classM ..|> interfaceN : Realization
-
-                                        classK ..> classL : Dependency
-                                        classG --> classH : Association
-
-                                        classC --* classD : Composition
-                                        classE --o classF : Aggregation
+                                <div class="p-2">
+                                    <img src="./assets/mermaid/diagram-3.png" />
                                 </div>
                             <table>
                                 <tr>
@@ -351,20 +330,8 @@
                             <div class="text-base font-bold">
                                 Diagram
                             </div>
-                            <div class="mermaid p-2 fragment">
-                                classDiagram
-                                    direction LR
-                                    Employee ..> SalaryCalculator
-                                    class Employee {
-                                        - name : String
-                                        - baseSalary : int
-                                        - overtime : int
-                                        + getSalary(calc : SalaryCalculator) int
-                                    }
-                                    class SalaryCalculator {
-                                        - taxRate : float
-                                        + calculate(baseSalary: int, overtime: int) int
-                                    }
+                            <div class="p-2 fragment">
+                                <img src="./assets/mermaid/diagram-4.png" />
                             </div>
                         </div>
                     </div>
@@ -401,21 +368,8 @@
                             <div class="text-base font-bold">
                                 Diagram
                             </div>
-                            <div class="mermaid p-2 fragment">
-                                classDiagram
-                                    direction LR
-                                    Customer --|> PersonalCustomer
-                                    Customer --|> CorporateCustomer
-                                    class Customer {
-                                        - name : String
-                                        - balance : int
-                                    }
-                                    class PersonalCustomer {
-                                        - jobDescription : String
-                                    }
-                                    class CorporateCustomer {
-                                        - nbEmployees : int
-                                    }
+                            <div class="p-2 fragment">
+                                <img src="./assets/mermaid/diagram-5.png" />
                             </div>
                         </div>
                     </div>
@@ -458,15 +412,8 @@
                             <div class="text-base font-bold">
                                 Diagram
                             </div>
-                            <div class="mermaid p-2">
-                                classDiagram
-                                    Employee ..> Company
-                                    class Employee {
-                                        - name : String
-                                    }
-                                    class Company {
-                                        - name : String
-                                    }
+                            <div class="p-2 fragment">
+                                <img src="./assets/mermaid/diagram-6.png" />
                             </div>
                         </div>
                     </div>
@@ -500,15 +447,8 @@
                             <div class="text-base font-bold">
                                 Diagram
                             </div>
-                            <div class="mermaid p-2 fragment">
-                                classDiagram
-                                    University "1" *.. "*" UniversityDepartment
-                                    class University {
-                                        - departments : UniversityDepartment[]
-                                    }
-                                    class UniversityDepartment {
-                                        - name : String
-                                    }
+                            <div class="p-2 fragment">
+                                <img src="./assets/mermaid/diagram-7.png" />
                             </div>
                         </div>
                     </div>
@@ -542,15 +482,8 @@
                             <div class="text-base font-bold">
                                 Diagram
                             </div>
-                            <div class="mermaid p-2 fragment">
-                                classDiagram
-                                    UniversityDepartment "1" o.. "*" Professor
-                                    class UniversityDepartment {
-                                        - professors : Professor[]
-                                    }
-                                    class Professor {
-                                        - name : String
-                                    }
+                            <div class="p-2 fragment">
+                                <img src="./assets/mermaid/diagram-8.png" />
                             </div>
                         </div>
                     </div>
@@ -605,26 +538,8 @@
                             <div class="text-base font-bold">
                                 Diagram
                             </div>
-                            <div class="mermaid p-2 fragment">
-                                classDiagram
-                                    Animal ..|> Kangaroo
-                                    Animal ..|> Elephant
-                                    class Animal {
-                                        &#60;&#60;interface&#62;&#62;
-                                        move()*
-                                        eat()*
-                                        sleep()*
-                                    }
-                                    class Kangaroo {
-                                        - move()
-                                        - eat()
-                                        - sleep()
-                                    }
-                                    class Elephant {
-                                        - move()
-                                        - eat()
-                                        - sleep()
-                                    }
+                            <div class="p-2 fragment">
+                                <img src="./assets/mermaid/diagram-9.png" />
                             </div>
                         </div>
                     </div>
@@ -701,10 +616,8 @@
                             <div class="text-base font-bold">
                                 Diagram
                             </div>
-                            <div class="mermaid p-2 fragment">
-                                classDiagram
-                                    class Car {
-                                    }
+                            <div class="p-2 fragment">
+                                <img src="./assets/mermaid/diagram-10.png" />
                             </div>
                         </div>
                     </div>
@@ -748,14 +661,8 @@
                             <div class="text-base font-bold">
                                 Diagram
                             </div>
-                            <div class="mermaid p-2 fragment">
-                                classDiagram
-                                    class Animal {
-                                        &#60;&#60;interface&#62;&#62;
-                                        move()*
-                                        eat()*
-                                        sleep()*
-                                    }
+                            <div class="p-2 fragment">
+                                <img src="./assets/mermaid/diagram-11.png" />
                             </div>
                         </div>
                     </div>
@@ -853,16 +760,8 @@
                             <div class="text-base font-bold">
                                 Diagram
                             </div>
-                            <div class="mermaid p-2 fragment">
-                                classDiagram
-                                    class Student {
-                                        String prefixCode$
-                                        getPrefixCode()$
-                                    }
-                                    class Employee {
-                                        String prefixCode$
-                                        getPrefixCode()$
-                                    }
+                            <div class="p-2 fragment">
+                                <img src="./assets/mermaid/diagram-12.png" />
                             </div>
                         </div>
                     </div>
@@ -922,12 +821,8 @@
                             <div class="text-base font-bold">
                                 Diagram
                             </div>
-                            <div class="mermaid fragment p-2">
-                                sequenceDiagram
-                                    participant anOrder
-                                    participant anOrderLine
-                                    participant aProduct
-                                    participant aCustomer
+                            <div class="fragment p-2">
+                                <img src="./assets/mermaid/diagram-13.png" />
                             </div>
                         </div>
                     </div>
@@ -942,22 +837,8 @@
                             <div class="text-base font-bold">
                                 Diagram
                             </div>
-                            <div class="max-h-89 mermaid fragment p-2">
-                                sequenceDiagram
-                                    participant anOrder
-                                    participant anOrderLine
-                                    participant aProduct
-                                    participant aCustomer
-                                    anOrder ->> anOrderLine : getQuantity
-                                    anOrderLine -->> anOrder : aQuantity
-                                    anOrder ->> anOrderLine : getProduct
-                                    anOrderLine -->> anOrder : aProduct
-                                    anOrder ->> aProduct: getPricingDetails
-                                    aProduct -->> anOrder : pricingDetails
-                                    anOrder ->> anOrder : calculateBasePrice
-                                    anOrder ->> anOrder : calculateDiscounts
-                                    anOrder ->> aCustomer : getDiscountInfo
-                                    aCustomer -->> anOrder : discountInfo
+                            <div class="max-h-89 fragment p-2">
+                                <img src="./assets/mermaid/diagram-14.png" />
                             </div>
                         </div>
                     </div>
@@ -972,32 +853,8 @@
                             <div class="text-base font-bold">
                                 Diagram
                             </div>
-                            <div class="mermaid fragment p-2">
-                                sequenceDiagram
-                                    participant anOrder
-                                    participant anOrderLine
-                                    participant aProduct
-                                    participant aCustomer
-                                    anOrder ->> anOrderLine : getQuantity
-                                    activate anOrder
-                                    activate anOrderLine
-                                    anOrderLine -->> anOrder : aQuantity
-                                    deactivate anOrderLine
-                                    anOrder ->> anOrderLine : getProduct
-                                    activate anOrderLine
-                                    anOrderLine -->> anOrder : aProduct
-                                    deactivate anOrderLine
-                                    anOrder ->> aProduct: getPricingDetails
-                                    activate aProduct
-                                    aProduct -->> anOrder : pricingDetails
-                                    deactivate aProduct
-                                    anOrder ->> anOrder : calculateBasePrice
-                                    anOrder ->> anOrder : calculateDiscounts
-                                    anOrder ->> aCustomer : getDiscountInfo
-                                    activate aCustomer
-                                    aCustomer -->> anOrder : discountInfo
-                                    deactivate aCustomer
-                                    deactivate anOrder
+                            <div class="fragment p-2">
+                                <img src="./assets/mermaid/diagram-15.png" />
                             </div>
                         </div>
                     </div>
@@ -1009,26 +866,8 @@
                             <div class="text-base font-bold">
                                 Diagram
                             </div>
-                            <div class="mermaid fragment p-2">
-                                sequenceDiagram
-                                    participant anOrder
-                                    participant anOrderLine
-                                    participant aProduct
-                                    participant aCustomer
-                                    anOrder ->> anOrderLine : calculatePrice
-                                    activate anOrder
-                                    activate anOrderLine
-                                    anOrderLine ->> aProduct : getPrice(quantity: number)
-                                    activate aProduct
-                                    aProduct -->> anOrderLine : totalPrice
-                                    deactivate aProduct
-                                    anOrderLine -->> anOrder : totalPrice
-                                    deactivate anOrderLine
-                                    anOrder ->> aCustomer : getDiscountedValue(totalPrice : number)
-                                    activate aCustomer
-                                    aCustomer -->> anOrder : discountedValue
-                                    deactivate aCustomer
-                                    deactivate anOrder
+                            <div class="fragment p-2">
+                                <img src="./assets/mermaid/diagram-16.png" />
                             </div>
                         </div>
                     </div>
@@ -1353,13 +1192,11 @@
     
     <script src="./node_modules/reveal.js/dist/reveal.js"></script>
     <script src="./node_modules/reveal.js/plugin/highlight/highlight.js"></script>
-    <script src="./node_modules/mermaid/dist/mermaid.js"></script>
     <script>
         Reveal.initialize({
             hash: true,
             plugins: [ RevealHighlight ]
         });
-        mermaid.initialize({startOnLoad:true});
     </script>
 </body>
 </html>
