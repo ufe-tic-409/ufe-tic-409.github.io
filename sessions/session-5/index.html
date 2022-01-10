@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Session 5</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../styles/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div
+        style="
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          margin-bottom: 50px;
+        "
+      >
+        <img
+          class="logo"
+          src="../../assets/ufe-logo.png"
+          alt="UFE Logo"
+          style="margin-right: 10px"
+        />
+        <div style="display: flex; flex-direction: column">
+          <h1 style="margin-bottom: 0" class="primary-color">
+            TIC 409 Advanced OOP
+          </h1>
+          <h2 style="margin-top: 0" class="primary-color">Session 5</h2>
+        </div>
+      </div>
+      <div>
+        <h3>👀 Observer pattern</h3>
+        <div>
+          <h4>Intent</h4>
+          <blockquote>
+            Define a one-to-many dependency between objects so that when one
+            object changes state, all its dependents are notified and updated
+            automatically.
+          </blockquote>
+        </div>
+        <div>
+          <h4>Diagram</h4>
+          <img
+            style="width: 75%"
+            src="./assets/observer-diagram.png"
+            alt="Observer diagram"
+          />
+        </div>
+        <div>
+          <h4>Example</h4>
+          <p>
+            You are creating your own game. In the game, multiple system have to
+            interact to provide the player with a full experience. In this
+            example, our game has 3 such systems:
+            <strong>Physics System</strong> (responsible for simulating physics
+            like falling objects and forces ...),
+            <strong>Audio System</strong> (plays the necessary game sounds) and
+            <strong>Achievements system</strong> (displays a popup for the user
+            whenever he accomplishes a new achievement)
+          </p>
+          <a href="https://gameprogrammingpatterns.com/observer.html"
+            >Exercice idea based on this great "Observer" chapter in "Game
+            Programming Patterns" free book.</a
+          >
+          <div class="starter-code">
+            <a
+              href="https://github.com/ufe-tic-409/design-patterns-examples/tree/d21ef55d90da8d73cf0b3c20428972958fc3339e/src/main/java/io/gawish/observer"
+              >Starter code</a
+            >
+          </div>
+          <h5>Questions</h5>
+          <ol>
+            <li>
+              Start by copying the start code and reading it. What do you think
+              about the code structure ?
+            </li>
+            <li>
+              How would you go about decoupling the different systems by using
+              the observer pattern ?
+            </li>
+            <li>
+              Let's say you want to add a UI system to display the player's
+              health in a health bar. How hard would it be to integrate it ?
+            </li>
+            <li>
+              <strong class="primary-color">[Event system variation]</strong>
+              How about observing the interesting action that is happening
+              instead of the subject it is happening on ?
+            </li>
+            <li>
+              <strong class="primary-color">[Linked List variation]</strong> To
+              improve program speed and avoid memory churn, you decide to use a
+              linked list instead of a List.
+            </li>
+          </ol>
+        </div>
+      </div>
+      <hr style="width: 100%; margin: 50px 0" />
+      <div>
+        <h3>🔂 State pattern</h3>
+        <div>
+          <h4>Intent</h4>
+          <blockquote>
+            State is a behavioral design pattern that lets an object alter its
+            behavior when its internal state changes. It appears as if the
+            object changed its class.
+          </blockquote>
+        </div>
+        <div>
+          <h4>Diagram</h4>
+          <img
+            style="width: 50%"
+            src="./assets/state-diagram.png"
+            alt="State diagram"
+          />
+        </div>
+        <div>
+          <h4>Example</h4>
+          <p>
+            You are creating a platformer game. In your game, the character can
+            do multiple actions. The character can for example
+            <strong>Jump</strong> (Only if he's Standing, we have to avoid
+            Double jumps), <strong>Duck (crouch)</strong> (Only he's Standing)
+            and <strong>Dive</strong> (If the player presses down while Jumping,
+            the character does a <strong>Dive</strong>).
+          </p>
+          <div>
+            <iframe
+              src="https://gfycat.com/ifr/DarkSpectacularCurlew?autoplay=0"
+              frameborder="0"
+              scrolling="no"
+              allowfullscreen
+              width="640"
+              height="404"
+            ></iframe>
+            <img
+              style="width: 60%"
+              src="./assets/celeste-states.png"
+              alt="State diagram"
+            />
+          </div>
+          <a href="https://gameprogrammingpatterns.com/state.html"
+            >Exercice idea based on this great "State" chapter in "Game
+            Programming Patterns" free book.</a
+          >
+          <div class="starter-code">
+            <a
+              href="https://github.com/ufe-tic-409/design-patterns-examples/tree/state/src/main/java/io/gawish/state"
+              >Starter code</a
+            >
+          </div>
+          <h5>Questions</h5>
+          <ol>
+            <li>
+              Start by copying the start code and reading it. What do you think
+              about the code structure ? Did you the bug with the current code ?
+            </li>
+            <li>
+              How would you simplify this code by using the State pattern ?
+              <i>[Start by drawing the state diagram]</i>
+            </li>
+            <li>
+              <strong class="primary-color"
+                >[Enter & exit actions variation]</strong
+              >
+              How can you improve the code by using enter and exit actions ?
+            </li>
+            <li>
+              <strong class="primary-color">[Static objects variation]</strong>
+              How can you avoid having to create a new object for each action
+              the user does ?
+            </li>
+          </ol>
+        </div>
+      </div>
+      <hr style="width: 100%; margin: 50px 0" />
+      <div>
+        <h3>🔂 Template method pattern</h3>
+        <div>
+          <h4>Intent</h4>
+          <blockquote>
+            Template Method is a behavioral design pattern that defines the
+            skeleton of an algorithm in the superclass but lets subclasses
+            override specific steps of the algorithm without changing its
+            structure.
+          </blockquote>
+        </div>
+        <div>
+          <h4>Diagram</h4>
+          <img
+            style="width: 50%"
+            src="./assets/state-diagram.png"
+            alt="State diagram"
+          />
+        </div>
+        <div>
+          <h4>Example</h4>
+          <p>
+            You are building a game. In this game, you can
+            <strong>Orcs</strong> and <strong>Monsters</strong>. Each of those
+            AI enemies has a different strategy for each turn.
+          </p>
+          <a href="https://refactoring.guru/design-patterns/template-method"
+            >Exercice idea based on the example in this link.</a
+          >
+          <div class="starter-code">
+            <a
+              href="https://github.com/ufe-tic-409/design-patterns-examples/tree/state/src/main/java/io/gawish/state"
+              >Starter code</a
+            >
+          </div>
+          <h5>Questions</h5>
+          <ol>
+            <li>
+              Start by copying the start code and reading it. What do you think
+              about the code structure ? Did you the bug with the current code ?
+            </li>
+            <li>
+              How would you simplify this code by using the State pattern ?
+              <i>[Start by drawing the state diagram]</i>
+            </li>
+            <li>
+              <strong class="primary-color"
+                >[Enter & exit actions variation]</strong
+              >
+              How can you improve the code by using enter and exit actions ?
+            </li>
+            <li>
+              <strong class="primary-color">[Static objects variation]</strong>
+              How can you avoid having to create a new object for each action
+              the user does ?
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
