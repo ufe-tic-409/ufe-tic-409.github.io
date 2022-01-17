@@ -7,9 +7,9 @@ const routes: RouteRecordRaw[] = [
         component: () => import('../pages/Home.vue'),
     },
     {
-        path: '/session-1',
-        name: 'session-1',
-        component: () => import("../pages/Session1.vue")
+        path: '/session',
+        name: 'session',
+        component: () => import("../pages/Session.vue")
     },
     // Always leave this as last one,
     // but you can also remove it

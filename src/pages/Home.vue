@@ -1,5 +1,5 @@
 <template>
-    <div class="container flex flex-col space-y-10">
+    <div class="container flex flex-col space-y-10 py-10">
         <Header />
         <div>
             <H3 class="text-primary">Softwares</H3>
@@ -22,7 +22,7 @@
                 </li>
                 <hr>
                 <li>
-                    <router-link class="underline text-primary" to="session-1">
+                    <router-link class="underline text-primary" to="session">
                         Session 1
                     </router-link>
                     <div><small>06/12/2021</small></div>
@@ -32,7 +32,7 @@
                 </li>
                 <hr>
                 <li>
-                    <router-link class="underline text-primary" to="session-1">
+                    <router-link class="underline text-primary" to="session">
                         Session 2
                     </router-link>
                     <div><small>13/12/2021</small></div>
@@ -42,7 +42,7 @@
                 </li>
                 <hr>
                 <li>
-                    <router-link class="underline text-primary" to="session-1">
+                    <router-link class="underline text-primary" to="session">
                         Session 3
                     </router-link>
                     <div><small>20/12/2021</small></div>
@@ -52,7 +52,7 @@
                 </li>
                 <hr>
                 <li>
-                    <router-link class="underline text-primary" to="session-1">
+                    <router-link class="underline text-primary" to="session">
                         Session 4
                     </router-link>
                     <div><small>03/01/2022</small></div>
@@ -62,7 +62,7 @@
                 </li>
                 <hr>
                 <li>
-                    <router-link class="underline text-primary" to="session-1">
+                    <router-link class="underline text-primary" to="session">
                         Session 5
                     </router-link>
                     <div><small>10/01/2022</small></div>
