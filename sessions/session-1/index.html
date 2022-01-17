@@ -28,44 +28,7 @@
           <h2 style="margin-top: 0;" class="primary-color">Creational patterns</h2>
         </div>
       </div>
-      <div>
-        <h3>🏭 Abstract factory pattern (aka. Kit)</h3>
-        <div>
-            <h4>Intent</h4>
-            <blockquote>
-                Provide an interface for creating families of related or dependent objects without specifying their concrete classes
-            </blockquote>
-        </div>
-        <div>
-            <h4>Diagram</h4>
-            <img src="./assets/abstract-factory.png" alt="Abstract factory diagram">
-        </div>
-        <div>
-            <h4>Example</h4>
-            <p>
-                Let's say you are creating a simple game. In the game, the player can do 3 actions: <strong>attack</strong>, <strong>travel</strong>, <strong>visit a friend</strong>. The game can have multiple different settings : <strong>Medieval</strong>, <strong>Futuristic</strong> and depending on the style chosen, different classes are used.
-            </p>
-            <small>
-                <i>For example: When traveling, if you are using the medieval setting, you will be using a horse, however, if you are using the Futuristic setting, you will use a spaceship. Same when attacking, if you attack in medieval, you attack with a sword, however, if you are using the Futuristic setting, you will use a Laser Sabre.</i>
-            </small>
-            <div class="starter-code">
-                <a href="https://github.com/kagawish/design-patterns-examples/tree/0.2/src/main/java/io/gawish/abstractfactory">Starter code</a>
-            </div>
-            <h5>Questions</h5>
-            <ol>
-                <li>Start by copying the start code and reading it. What do you think about the code structure ?</li>
-                <li>Let's assume we wanted to add a new setting : <strong>Modern (Car, MachineGun)</strong>. Start by adding the necessary classes.</li>
-                <li>Do the necessary changes have a working program. How hard was it to integrate a new setting ? <a href="https://github.com/kagawish/design-patterns-examples/tree/0.3/src/main/java/io/gawish/abstractfactory">[code]</a></li>
-                <li>Refactor the code by using the Abstract Factory pattern to remove redundancies and improve code flexibility <a href="https://github.com/kagawish/design-patterns-examples/tree/0.4/src/main/java/io/gawish/abstractfactory">[code]</a></li>
-                <li>
-                    <strong class="primary-color">[Optional - Concrete fallback variation]</strong> How to make it so that you don't have to implement all the methods in the abstract factory ?
-                </li>
-                <li>
-                    <strike><strong class="primary-color">[Optional - Extensible factories variation]</strong> How to make your factories generic so that you don't have to create a factory method for each type of class ?</strike>
-                </li>
-            </ol>
-        </div>
-      </div>
+
       <hr style="width: 100%; margin: 50px 0;">
       <div>
         <h3>🏗 Builder pattern</h3>

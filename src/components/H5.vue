@@ -1,12 +1,12 @@
 <template>
-    <div class="font-bold text-lg">
+    <div class="font-bold text-normal mb-2">
         <slot />
     </div>
 </template>
 
 <script>
 export default {
-    name: "H3"
+    name: "H5"
 }
 </script>
 

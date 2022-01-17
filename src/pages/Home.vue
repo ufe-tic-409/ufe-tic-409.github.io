@@ -2,14 +2,14 @@
     <div class="container flex flex-col space-y-10">
         <Header />
         <div>
-            <H3>Softwares</H3>
+            <H3 class="text-primary">Softwares</H3>
             <ul>
                 <li>StarUML (perpetual trial - Export watermarked)</li>
                 <li>IntellijIdea Community Edition</li>
             </ul>
         </div>
         <div>
-            <H3 class="mb-2">Practical sessions</H3>
+            <H3 class="mb-2 text-primary">Practical sessions</H3>
             <ul class="space-y-4">
                 <li>
                     <router-link class="underline text-primary" to="uml">

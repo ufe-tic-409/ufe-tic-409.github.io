@@ -1,12 +1,12 @@
 <template>
-    <div class="font-bold text-lg">
+    <div class="bg-primary text-white p-2 my-4 underline">
         <slot />
     </div>
 </template>
 
 <script>
 export default {
-    name: "H3"
+    name: "StartCodeLink"
 }
 </script>
 
