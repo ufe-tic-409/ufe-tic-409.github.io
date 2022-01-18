@@ -31,6 +31,63 @@ const patterns: { [key: string]: Pattern } = {
                 is_optional: true
             }
         ]
+    },
+    "singleton": {
+        title: "⓵ Singleton pattern",
+        intent: "Ensure a class has only one instance and provide a global point of access to it.",
+        diagram_link: "./assets/singleton.png",
+        body: "Starting with the code implemented on the Builder pattern, in this example, you will have to implement a Logger class that will be used by all the different classes to generate log messages.",
+        questions: [
+            {
+                body: "Start by copying the start code and reading it. What do you think about the code structure ?"
+            },
+            {
+                body: "How can you make it easier to access the Logger without having to pass it to each class ?"
+            },
+            {
+                variant_name: "Eager creation variation",
+                body: "Implement the eager creation variation of the singleton on a <strong>Sound</strong> singleton class",
+                is_optional: true
+            },
+            {
+                variant_name: "Registry variation",
+                body: "How can you implement multiple different loggers that log to different outputs ?",
+                is_optional: true
+            }
+        ]
+    },
+    "builder": {
+        title: "🏗 Builder pattern",
+        intent: "Separate the construction of a complex object from its representation so that the same construction process can create different representations.",
+        diagram_link: "./assets/builder.png",
+        body: "Let's say you are building a sci-fi simulation game. In the game, you can create a <strong>Spacebase</strong> and each spacebase can have multiple <strong>Electricity Generators</strong>, <strong>Water Plants</strong> and <strong>Houses</strong>.",
+        body_subtext: "For example: A spacebase can have 2 Electricity Generators, 2 Water Plants and 5 Houses.",
+        questions: [
+            {
+                body: "Start by copying the start code and reading it. What do you think about the code structure ?"
+            },
+            {
+                body: "How can we hide the complexity of creating a Spacebase using constructors ? What do you think about this solution ?"
+            },
+            {
+                body: "How can we refactor the code implementing the Builder pattern to hide the complexity ?"
+            },
+            {
+                variant_name: "Director variation",
+                body: "Implement the director variation to facilitate the Spacebase creation process even further.",
+                is_optional: true
+            },
+            {
+                variant_name: "Fluent variation",
+                body: "Can you implement a <a href=\"https://en.wikipedia.org/wiki/Fluent_interface\">fluent interface</a> for the builder to enable function chaining?",
+                is_optional: true
+            }
+        ]
+    },
+    "factory-method": {
+        title: "🛠 Factory method pattern",
+        intent: "Define an interface for creating an object, but let subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses."   ,
+        diagram_link: "./assets/factory-method.png",
     }
 }
 

@@ -19,7 +19,7 @@
                     <small v-html="pattern.body_subtext" />
                 </template>
                 <template #start-code-link>
-                    <a href="https://github.com/kagawish/design-patterns-examples/tree/0.2/src/main/java/io/gawish/abstractfactory">Starter code</a>
+                    <a :href="pattern.starter_code_link">Starter code</a>
                 </template>
                 <template #questions>
                     <ol class="list-decimal">
