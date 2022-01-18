@@ -64,9 +64,7 @@ export default defineComponent({
     name: "Session",
     components: {Pattern, Header, Disclosure, DisclosurePanel, DisclosureButton},
     setup() {
-        const patterns = [
-            data["abstract-factory"]
-        ]
+        const patterns = Object.values(data);
         return {
             patterns
         }

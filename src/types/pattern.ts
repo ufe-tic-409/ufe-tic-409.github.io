@@ -4,6 +4,7 @@ export type Pattern = {
     diagram_link: string
     starter_code_link: string
     body: string
+    body_img?: string
     body_subtext?: string
     questions: Question[]
 }
