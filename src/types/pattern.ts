@@ -6,6 +6,7 @@ export type Pattern = {
     body: string
     body_img?: string
     body_subtext?: string
+    session: string,
     questions: Question[]
 }
 

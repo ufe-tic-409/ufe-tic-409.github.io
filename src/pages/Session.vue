@@ -1,9 +1,9 @@
 <template>
     <div class="container flex flex-col space-y-10 py-10">
         <Header>
-            Creational patterns
+            Session {{ id }}
         </Header>
-        <div>
+        <div class="space-y-32">
             <Pattern v-for="pattern in patterns">
                 <template #title>
                     {{ pattern.title }}
@@ -12,7 +12,7 @@
                     {{ pattern.intent }}
                 </template>
                 <template #diagrams>
-                    <img :src="pattern.diagram_link" alt="Abstract factory diagram">
+                    <img class="max-h-96" :src="pattern.diagram_link">
                 </template>
                 <template #example>
                     <p v-html="pattern.body" />
@@ -59,14 +59,20 @@ import Pattern from "../components/Pattern.vue";
 import {defineComponent} from "vue";
 import data from "../data/patterns";
 import {Disclosure, DisclosureButton, DisclosurePanel} from "@headlessui/vue";
+import {useRoute} from "vue-router";
 
 export default defineComponent({
     name: "Session",
     components: {Pattern, Header, Disclosure, DisclosurePanel, DisclosureButton},
     setup() {
-        const patterns = Object.values(data);
+        const route = useRoute();
+        const id = route.params.id;
+        const patterns = Object.values(data).filter(function (pattern) {
+            return pattern.session === id;
+        });
         return {
-            patterns
+            patterns,
+            id
         }
     }
 })

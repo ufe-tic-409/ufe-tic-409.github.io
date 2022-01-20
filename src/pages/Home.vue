@@ -22,7 +22,7 @@
                 </li>
                 <hr>
                 <li>
-                    <router-link class="underline text-primary" to="session">
+                    <router-link class="underline text-primary" to="/session/1">
                         Session 1
                     </router-link>
                     <div><small>06/12/2021</small></div>
@@ -32,7 +32,7 @@
                 </li>
                 <hr>
                 <li>
-                    <router-link class="underline text-primary" to="session">
+                    <router-link class="underline text-primary" to="/session/2">
                         Session 2
                     </router-link>
                     <div><small>13/12/2021</small></div>
@@ -42,7 +42,7 @@
                 </li>
                 <hr>
                 <li>
-                    <router-link class="underline text-primary" to="session">
+                    <router-link class="underline text-primary" to="/session/3">
                         Session 3
                     </router-link>
                     <div><small>20/12/2021</small></div>
@@ -52,7 +52,7 @@
                 </li>
                 <hr>
                 <li>
-                    <router-link class="underline text-primary" to="session">
+                    <router-link class="underline text-primary" to="/session/4">
                         Session 4
                     </router-link>
                     <div><small>03/01/2022</small></div>
@@ -62,7 +62,7 @@
                 </li>
                 <hr>
                 <li>
-                    <router-link class="underline text-primary" to="session">
+                    <router-link class="underline text-primary" to="/session/5">
                         Session 5
                     </router-link>
                     <div><small>10/01/2022</small></div>
