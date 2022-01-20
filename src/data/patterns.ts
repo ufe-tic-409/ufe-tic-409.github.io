@@ -189,33 +189,37 @@ const patterns: { [key: string]: Pattern } = {
         diagram_link: "./assets/composite-diagram.png",
         body: "You are creating an RPG (Role-playing game). In your game, your character carries a bag in which he can put the items he finds while hunting. The player's movement is affected by the weight of the items he's carrying, so it is important to know the total weight of the bag he's carrying.<strong>A bag can carry a maximum of 5 items</strong>. However, a player can extend the number of items he can carry by adding a new bag to his bag and thus increase the maximum amount of items he can carry.",
         body_img: "./assets/composite-reference-image.jpg",
-        starter_code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/ada0701643be23adc2e24ac2658bf6d06a588916/src/main/java/io/gawish/composite",
+        starter_code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/composite-0/src/main/java/io/gawish/composite",
         questions: [
             {
-                body: "Start by copying the start code and reading it. What do you think about the code structure ?"
+                body: "Start by copying the start code and reading it. What do you think about the code structure ?",
+                answer: "Treating Bags and Items as different elements, complicates the code, we can see this in having to have 2 different 'addInBag' functions which do the same thing conceptually, having an addItem and addBag which do almost the same thing conceptually and complicates the getWeight because we have 2 pass on 2 different lists to calculate the total weight. If both Bag and Item had a common parent, we could have treated them using the same functions and thus reduced the code duplication and simplified it."
             },
             {
                 body: "Improve the code structure and remove duplication by implementing the composite pattern.",
-                code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/225f6291c593205d0eeabd63c31eff36056d86fa/src/main/java/io/gawish/composite",
+                code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/composite-1/src/main/java/io/gawish/composite",
                 is_primary_implementation: true
             },
             {
                 body: "How would you prevent someone from unintentionally using<strong>addCariable()</strong> on an item (ex.<strong>sword1.addCarriable(sword2)</strong>) ?",
-                code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/89eb388cc3c00feaca6a2b810c893fa1e09a72a8/src/main/java/io/gawish/composite",
-                is_optional: true
+                code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/composite-2/src/main/java/io/gawish/composite",
+                is_primary_implementation: true,
             },
             {
                 body: "How would you implement the method <strong>item.drop()</strong> to remove an item from its bag ?",
-                code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/0208bacd1f86ec2de54665e283c35647ef41b96c/src/main/java/io/gawish/composite",
+                code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/composite-3/src/main/java/io/gawish/composite",
                 is_optional: true
             },
             {
-                body: "Does this exercice remind you of an exercise we did in last year's OOP course ?",
-                is_optional: true
+                body: "Does this exercise remind you of an exercise we did in last year's OOP course ?",
+                is_optional: true,
+                answer: "Yes, the same idea was used for the Stylo, Ramette, Lot & Magasin exercise we did last year."
             },
             {
                 variant_name: "Caching variation",
-                body: "How would you go about using caching in container objects to avoid recalculating the weights each time?"
+                body: "How would you go about using caching in container objects to avoid recalculating the weights each time?",
+                code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/composite-4/src/main/java/io/gawish/composite",
+                is_optional: true
             }
         ]
     },
@@ -224,13 +228,16 @@ const patterns: { [key: string]: Pattern } = {
         intent: "Bridge is a structural design pattern that lets you split a large class or a set of closely related classes into two separate hierarchies—abstraction and implementation—which can be developed independently of each other.",
         diagram_link: "./assets/bridge-diagram.png",
         body: "You are creating your own game. In the game, you have companion NPCs (Non-playing characters) that can help you the fights against the world's monsters. Depending on the different monsters you are facing, you can choose the behavior of your companion NPCs to be either: <strong>Aggressive</strong> or <strong>Defensive</strong>. You have 3 types of companions: <strong>Fighter</strong>,<strong>Medic</strong> & <strong>Hacker</strong>.",
-        starter_code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/095acd0e401e371e83d573daee8c25f9cd91bb46/src/main/java/io/gawish/bridge",
+        starter_code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/bridge-0/src/main/java/io/gawish/bridge",
         questions: [
             {
-                body: "Start by copying the start code and reading it. What do you think about the code structure ?"
+                body: "Start by copying the start code and reading it. What do you think about the code structure ?",
+                answer: "To be able to have any combination of Companion and Fighting style, we had to create every combination which is something that is not sustainable. If for example, we decide to add a new Fighting Style, we will have to add 3 new Classes for each of the Companions in the new Fighting style. This is not a good structure."
             },
             {
                 body: "How would you integrate the bridge pattern to divide and reorganise the code to enable more flexibility on extension ?",
+                answer: "To be able to grow the 2 different hierarchies (FightingStyle) and (CompanionType). We will have to compose 1 of the structures into the other. In our case, we will compose (put as an instance variable) the Companion in the FightingStyle. This will allow us to grow those 2 different hierarchies separately.",
+                code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/bridge-1/src/main/java/io/gawish/bridge",
                 is_primary_implementation: true
             }
         ]
@@ -240,23 +247,26 @@ const patterns: { [key: string]: Pattern } = {
         intent: "Provide a unified interface to a set of interfaces in a subsystem. Facade defines a higher-level interface that makes the system easier to use.",
         diagram_link: "./assets/facade-diagram.png",
         body: "You are creating your 3D game. You are still in the beginning stages, so you want to simply display a couple of 3d models you have already designed to see how they look in the default game environment. However, as simple as this may appear, rendering a scene with 3d models in it requires a lot of work to be done.",
-        starter_code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/029b55d9f53e432ff2f420ffa0d4bf7fe529bd1f/src/main/java/io/gawish/facade",
+        starter_code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/facade-0/src/main/java/io/gawish/facade",
         questions: [
             {
                 body: "Start by copying the start code and reading it. What do you think about the code structure ?"
             },
             {
                 body: "How would you simplify the code by introducing a facade ?",
+                code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/facade-1/src/main/java/io/gawish/facade",
                 is_primary_implementation: true
-            },
-            {
-                variant_name: "Multiple facades variation",
-                body: "How can you make your system depend on a Facade abstraction so that you can have multiple different implementations ?",
-                is_optional: true
             },
             {
                 variant_name: "Static methods variation & Singleton",
                 body: "Can you use static methods or singleton pattern to make the facade easier to use ?",
+                code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/facade-0/src/main/java/io/gawish/facade",
+                is_optional: true
+            },
+            {
+                variant_name: "Multiple facades variation",
+                body: "How can you make your system depend on a Facade abstraction so that you can have multiple different implementations ?",
+                is_not_implemented: true,
                 is_optional: true
             }
         ]
