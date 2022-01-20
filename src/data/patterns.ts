@@ -255,13 +255,14 @@ const patterns: { [key: string]: Pattern } = {
             {
                 body: "How would you simplify the code by introducing a facade ?",
                 code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/facade-1/src/main/java/io/gawish/facade",
+                is_not_implemented: true,
                 is_primary_implementation: true
             },
             {
                 variant_name: "Static methods variation & Singleton",
                 body: "Can you use static methods or singleton pattern to make the facade easier to use ?",
-                code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/facade-0/src/main/java/io/gawish/facade",
-                is_optional: true
+                code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/facade-2/src/main/java/io/gawish/facade",
+                is_primary_implementation: true,
             },
             {
                 variant_name: "Multiple facades variation",
@@ -277,28 +278,28 @@ const patterns: { [key: string]: Pattern } = {
         diagram_link: "./assets/observer-diagram.png",
         body: "You are creating your own game. In the game, multiple system have to interact to provide the player with a full experience. In this example, our game has 3 such systems:<strong>Physics System</strong> (responsible for simulating physics like falling objects and forces ...), <strong>Audio System</strong> (plays the necessary game sounds) and <strong>Achievements system</strong> (displays a popup for the user whenever he accomplishes a new achievement)",
         body_subtext: "Exercise idea based on this great \"Observer\" chapter in \"Game Programming Patterns\" free book.",
-        starter_code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/d21ef55d90da8d73cf0b3c20428972958fc3339e/src/main/java/io/gawish/observer",
+        starter_code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/observer-0/src/main/java/io/gawish/observer",
         questions: [
             {
-                body: "Start by copying the start code and reading it. What do you think about the code structure?"
+                body: "Start by copying the start code and reading it. What do you think about the code structure?",
+                answer: "While the code isn't very bad because we used Singletons for the different systems and so any system can access the other easily. The problem lies in the fact that conceptually, the Physics system shouldn't have to know about the Achievement System or the Audio System for example. In the ideal scenario, the Physics System should say that 'The player fell' and then each other System should independently react to this event. This is what the observer pattern helps us to do. Decouple the different systems in our software, by having a System send events and other systems subscribe to getting notified when this event happens and then react to it."
             },
             {
                 body: "How would you go about decoupling the different systems by using the observer pattern ?",
-                is_primary_implementation: true
-            },
-            {
-                body: "Let's say you want to add a UI system to display the player's health in a health bar. How hard would it be to integrate it ?",
+                code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/observer-1/src/main/java/io/gawish/observer",
                 is_primary_implementation: true
             },
             {
                 variant_name: "Event system variation",
                 body: "How about observing the interesting action that is happening instead of the subject it is happening on ?",
+                code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/observer-2/src/main/java/io/gawish/observer",
                 is_optional: true
             },
             {
                 variant_name: "Linked List variation",
                 body: "To improve program speed and avoid memory churn, you decide to use a linked list instead of a List.",
-                is_optional: true
+                is_optional: true,
+                is_not_implemented: true
             }
         ]
     },
@@ -309,23 +310,27 @@ const patterns: { [key: string]: Pattern } = {
         body: "You are creating a platformer game. In your game, the character can do multiple actions. The character can for example<strong>Jump</strong> (Only if he's Standing, we have to avoid Double jumps), <strong>Duck (crouch)</strong> (Only he's Standing) and <strong>Dive</strong> (If the player presses down while Jumping, the character does a <strong>Dive</strong>).",
         body_img: "./assets/celeste-states.png",
         body_subtext: "Exercise idea based on this great \"State\" chapter in \"Game Programming Patterns\" free book",
-        starter_code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/835eca703754f67868891950bf767d2b58266c78/src/main/java/io/gawish/state",
+        starter_code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/state-0/src/main/java/io/gawish/state",
         questions: [
             {
-                body: "Start by copying the start code and reading it. What do you think about the code structure ? Did you the bug with the current code ?"
+                body: "Start by copying the start code and reading it. What do you think about the code structure ?",
+                answer: "Having complex branching (complex if conditions) isn't ideal and is very error prone. We will use the state pattern to simplify it by having a class that represents each state."
             },
             {
                 body: "How would you simplify this code by using the State pattern ?<i>[Start by drawing the state diagram]</i>",
-                is_primary_implementation: true
+                is_primary_implementation: true,
+                code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/state-1/src/main/java/io/gawish/state"
             },
             {
                 variant_name: "Enter & exit actions variation",
                 body: "How can you improve the code by using enter and exit actions ?",
+                code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/state-2/src/main/java/io/gawish/state",
                 is_optional: true
             },
             {
                 variant_name: "Static objects variation",
                 body: "How can you avoid having to create a new object for each action the user does ?",
+                code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/state-3/src/main/java/io/gawish/state",
                 is_optional: true
             }
         ]
@@ -336,7 +341,7 @@ const patterns: { [key: string]: Pattern } = {
         diagram_link: "/assets/template-method-diagram.png",
         body: "You are building a game. In this game, you can <strong>Orcs</strong> and <strong>Monsters</strong>. Each of those AI enemies has a different strategy for each turn. However, if you take a careful look, you will see there are commonalities.",
         body_subtext: "<a href=\"https://refactoring.guru/design-patterns/template-method\">Exercise idea based on the example in this link.</a>",
-        starter_code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/d7d7c1e8f541f88a37fe324d3dc7ee7523f797c3/src/main/java/io/gawish/templatemethod",
+        starter_code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/template-method/src/main/java/io/gawish/templatemethod",
         questions: [
             {
                 body: "Start by copying the start code and reading it. What do you think about the code structure ?"
