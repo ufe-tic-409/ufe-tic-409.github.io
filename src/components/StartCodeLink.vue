@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-primary text-white p-2 my-4 underline">
+    <div class="bg-primary rounded-md text-white p-2 my-4 underline">
         <slot />
     </div>
 </template>

@@ -317,7 +317,7 @@ const patterns: { [key: string]: Pattern } = {
         title: "🔂 State pattern",
         intent: "State is a behavioral design pattern that lets an object alter its behavior when its internal state changes. It appears as if the object changed its class.",
         diagram_link: "/src/assets/state-diagram.png",
-        body: "You are creating a platformer game. In your game, the character can do multiple actions. The character can for example<strong>Jump</strong> (Only if he's Standing, we have to avoid Double jumps), <strong>Duck (crouch)</strong> (Only he's Standing) and <strong>Dive</strong> (If the player presses down while Jumping, the character does a <strong>Dive</strong>).",
+        body: "You are creating a platformer game. In your game, the character can do multiple actions. The character can for example <strong>Jump</strong> (Only if he's Standing, we have to avoid Double jumps), <strong>Duck (crouch)</strong> (Only he's Standing) and <strong>Dive</strong> (If the player presses down while Jumping, the character does a <strong>Dive</strong>).",
         body_img: "/src/assets/celeste-states.png",
         body_subtext: "Exercise idea based on this great \"State\" chapter in \"Game Programming Patterns\" free book",
         starter_code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/state-0/src/main/java/io/gawish/state",
