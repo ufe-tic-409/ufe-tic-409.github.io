@@ -347,7 +347,8 @@ const patterns: { [key: string]: Pattern } = {
                 body: "Start by copying the start code and reading it. What do you think about the code structure ?"
             },
             {
-                body: "How would you simplify this code by using the Template method pattern ?"
+                body: "How would you simplify this code by using the Template method pattern ?",
+                is_not_implemented: true
             }
         ]
     }
