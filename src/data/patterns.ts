@@ -37,22 +37,30 @@ const patterns: { [key: string]: Pattern } = {
         intent: "Ensure a class has only one instance and provide a global point of access to it.",
         diagram_link: "./assets/singleton.png",
         body: "Starting with the code implemented on the Builder pattern, in this example, you will have to implement a Logger class that will be used by all the different classes to generate log messages.",
+        starter_code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/singleton-0/src/main/java/io/gawish/singleton",
         questions: [
             {
-                body: "Start by copying the start code and reading it. What do you think about the code structure ?"
+                body: "Start by copying the start code and reading it. What do you think about the code structure ?",
+                answer: "The logger class is being used by all the other classes to log information to the console, however, with the way we are doing it, we had to pass the logger object to each and every class to be able to use in that class, we also had to create an instance of Logger in each of the classes. This is not ideal because it pollutes the code. Ideally, we would want a way to use the Logger from any class without having to pass it to that class."
             },
             {
-                body: "How can you make it easier to access the Logger without having to pass it to each class ?"
+                body: "How can you make it easier to access the Logger without having to pass it to each class ?",
+                answer: "Using the singleton pattern is one solution to such problem. Another solution is Dependency Injection systems (we are not going to study it in this course)",
+                code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/singleton-1/src/main/java/io/gawish/singleton",
+                is_primary_implementation: true
             },
             {
                 variant_name: "Eager creation variation",
                 body: "Implement the eager creation variation of the singleton on a <strong>Sound</strong> singleton class",
-                is_optional: true
+                answer: "This variant is used when you want to insure that a certain singleton is created whenever the program is run: this is important if you a are working with critical singletons that take a lot time to create and that you don't want to create lazily. The example here would be something like the Sound system, you don't want to load the sound system whenever the game is playing its first sound, you want to do it whenever the game is loading the first time to avoid any delays when the first sound is played.",
+                is_optional: true,
+                code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/singleton-2/src/main/java/io/gawish/singleton",
             },
             {
                 variant_name: "Registry variation",
                 body: "How can you implement multiple different loggers that log to different outputs ?",
-                is_optional: true
+                is_optional: true,
+                is_not_implemented: true
             }
         ]
     },
@@ -62,40 +70,42 @@ const patterns: { [key: string]: Pattern } = {
         diagram_link: "./assets/builder.png",
         body: "Let's say you are building a sci-fi simulation game. In the game, you can create a <strong>Spacebase</strong> and each spacebase can have multiple <strong>Electricity Generators</strong>, <strong>Water Plants</strong> and <strong>Houses</strong>.",
         body_subtext: "For example: A spacebase can have 2 Electricity Generators, 2 Water Plants and 5 Houses.",
+        starter_code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/builder-0/src/main/java/io/gawish/builder",
         questions: [
             {
-                body: "Start by copying the start code and reading it. What do you think about the code structure ?"
-            },
-            {
-                body: "How can we hide the complexity of creating a Spacebase using constructors ? What do you think about this solution ?"
+                body: "Start by copying the start code and reading it. What do you think about the code structure ?",
+                answer: "With the current code structure, each time we want to assign a new ElectricityGenerator to a House or a new WaterPlant to a house, we had to manually create the object, assign it to a variable, then assign it to the house. The same goes for the Spacebase, we have to create each ElectricityGenerator and WaterPlant before assigning it to the Spacebase. Effectively, we are doing the same thing each time. This is a hassle, it would be nice to have a way to easily make those creations without having to create the objects each time."
             },
             {
                 body: "How can we refactor the code implementing the Builder pattern to hide the complexity ?",
+                code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/builder-1/src/main/java/io/gawish/builder",
                 is_primary_implementation: true
-            },
-            {
-                variant_name: "Director variation",
-                body: "Implement the director variation to facilitate the Spacebase creation process even further.",
-                is_optional: true
             },
             {
                 variant_name: "Fluent variation",
                 body: "Can you implement a <a href=\"https://en.wikipedia.org/wiki/Fluent_interface\">fluent interface</a> for the builder to enable function chaining?",
+                code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/builder-2/src/main/java/io/gawish/builder",
+                is_optional: true
+            },
+            {
+                variant_name: "Director variation",
+                body: "Implement the director variation to facilitate the Spacebase creation process even further.",
+                code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/builder-3/src/main/java/io/gawish/builder",
                 is_optional: true
             }
         ]
     },
-    "factory-method": {
-        title: "🛠 Factory method pattern",
-        intent: "Define an interface for creating an object, but let subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses."   ,
-        diagram_link: "./assets/factory-method.png",
-    },
+    // "factory-method": {
+    //     title: "🛠 Factory method pattern",
+    //     intent: "Define an interface for creating an object, but let subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses."   ,
+    //     diagram_link: "./assets/factory-method.png",
+    // },
     "adapter": {
         title: "🔌 Adapter",
         intent: "Converts the interface of a class into another interface clients expect.",
         diagram_link: "./assets/adapter-diagram.png",
         body: "You are creating your game. In the game, you as a player can launch an attack using a <strong>Sword</strong>. After working on the game, you realize you need to add the possibility of attacking using a <strong>Gun</strong>. Both <strong>Sword</strong> and <strong>Gun</strong> have a different interfaces as you will see in the code because a sword is a close combat weapon and a gun is a ranged weapon.",
-        starter_code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/d4b137006167258ab5e090a5660c70a6202fd865/src/main/java/io/gawish/adapter",
+        starter_code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/adapter-0/src/main/java/io/gawish/adapter",
         questions: [
             {
                 body: "Start by copying the start code and reading it."
@@ -103,13 +113,15 @@ const patterns: { [key: string]: Pattern } = {
             {
                 variant_name: "Composition variation",
                 body: "How would you go about making the Gun work as a weapon without changing the Gun interface or the weapon interface ?",
+                answer: "This can be done by adapting the Gun interface to the Weapon interface using an Adapter. In this variation, this is done by 'composing' the Gun in the adapter (GunWeapon) and whenever the 'attack' method is called on the adapter, redirecting it to the 'fire' method on the Gun",
                 is_primary_implementation: true,
-                code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/eae5b4b60925e55e13e277026c02baf6dc0651c5/src/main/java/io/gawish/adapter"
+                code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/adapter-1/src/main/java/io/gawish/adapter"
             },
             {
                 variant_name: "Inheritance variation",
                 body: "Can you change the adapter to use Inheritance instead of composition ? What are the pros and cons of each method?",
-                code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/ed7a556f0a09bb7aa1b0c2b7d977c0f64fc13f19/src/main/java/io/gawish/adapter"
+                answer: "This is similar to the previous solution, however, the difference is that instead of 'composing' the Gun inside the adapter (GunWeapon), we make the adapter inherit the Gun and redirect the 'attack' call to its parent's (Gun) fire method.",
+                code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/adapter-2/src/main/java/io/gawish/adapter"
             }
         ]
     },
@@ -119,18 +131,22 @@ const patterns: { [key: string]: Pattern } = {
         diagram_link: "./assets/proxy-diagram.png",
         body: "You are creating you sci-fi game. In your game, you must render multiple Players. Rendering is the process of converting the data structure containing information about a certain object and the environment surrounding it to an image to display. However, rendering a Player is a costly operation.",
         body_subtext: "For the sake of the example, we will assume that rendering doesn't need to be redone if the player hasn't change his position.",
-        starter_code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/62df8787542064d767c02aabf57e1842e632c06e/src/main/java/io/gawish/proxy",
+        starter_code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/proxy-0/src/main/java/io/gawish/proxy",
         questions: [
             {
-                body: "Start by copying the start code and reading it. "
+                body: "Start by copying the start code and reading it."
             },
             {
                 body: "Start by implementing proxy pattern to protect the player from being re-rendered again if he hasn't changed his position.",
-                code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/1aeb2722c532faee6cdf8a5bbcd89ad86780cede/src/main/java/io/gawish/proxy"
+                answer: "In this solution, we are creating the (OptimisedPlayer) class which is a proxy, if you take a look, most of what it does is whenever, a call is done to it, it redirects it to the Player, however, this gives us the possibility of protecting intensive actions from being called when not necessary. In this case, rerender, is assumed to be an intensive action, and so here, we don't do it unless the boolean mustRerender is true, and we put the mustRerender boolean to true only if the Player takes a step. This ensures the rerender function doesn't re-run when not needed.",
+                code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/proxy-1/src/main/java/io/gawish/proxy",
+                is_primary_implementation: true
             },
             {
                 body: "Finally, add <strong>`calculateRank`</strong> method than returns a number from 1 to 100. Assuming calculating the ranking is an intensive process. You can cache the last score that was returned to the user and only recalculate it if the players changes position. Use the proxy you developed in the last question to cache the score. Display the rank on each loop to view when it changes.",
-                code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/8fdccb82a97073b291ae2c068616ba993b939f15/src/main/java/io/gawish/proxy"
+                answer: "Same as the previous solution, however, here we are using the proxy also to cache a certain value to ensure that we don't have to recalculate it each time if it hadn't changed.",
+                code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/proxy-2/src/main/java/io/gawish/proxy",
+                is_primary_implementation: true
             }
         ]
     },
@@ -140,24 +156,30 @@ const patterns: { [key: string]: Pattern } = {
         diagram_link: "./assets/decorator-diagram.png",
         body: "You are creating you sci-fi game. In your game, you can own a spaceship. Your spaceship has a basic gun and a basic shield. You can customize your spaceship by attaching addons to it. In our example your will be able to attach <strong>Laser gun</strong> to improve your attack. You can also equip a<strong>Point-defense cannon</strong> to improve your defense.",
         body_subtext: "We don't care about how much those addons will impact your attack and defense we will be focusing on ensuring they are activated at the correct time if they are attached to your spaceship. Also a spaceship may have any combination of the above equipments.",
-        starter_code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/31aac56e0011d8237d38ca63bf5ed18a96e59c03/src/main/java/io/gawish/decorator",
+        starter_code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/decorator-0/src/main/java/io/gawish/decorator",
         questions: [
             {
-                body: "Start by copying the start code and reading it. What do you think about the code structure ?"
+                body: "Start by copying the start code and reading it. What do you think about the code structure ?",
+                answer: "The code structure is bad because now we only have 2 upgrades and we had to create 3 classes for it (2^2 - 1) to have all the different variations of upgrades. However, we can imagine if this number grows to for example 6 different upgrades, we will have to create 35 classes to have all the different variations. This is not a sustainable way to ensure we can easily create upgrades in the future."
             },
             {
-                body: "Let's assume we wanted to add a new Attack weapon. How hard will it be ? Why ?"
+                body: "Let's assume we wanted to add a new Attack weapon. How hard will it be ? Why ?",
+                answer: "Hard because of the reasoning specified in the previous question."
             },
             {
                 body: "Start by implementing the decorator pattern to improve the code structure.",
-                code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/bbdbc72ceee6381fbc85c67d34530710c1d25cf7/src/main/java/io/gawish/decorator",
+                answer: "This is done by having both the Decorators (upgrades here) and the Decorated Element (Spaceship) have the same interface and for the decorators to compose (have it as an instance variable) the Decorated object. Whenever, an attack or defend method is called on a Decorator, it will do its functionality and pass the call to the Decorated Object.",
+                code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/decorator-1/src/main/java/io/gawish/decorator",
                 is_primary_implementation: true
             },
             {
-                body: "How hard would it be to create a `downgrade` method that detaches the last attachment ?"
+                body: "How hard would it be to create a `downgrade` method that detaches the last attachment ?",
+                code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/decorator-2/src/main/java/io/gawish/decorator",
+                is_optional: true
             },
             {
-                body: "Is there any other method way to create the same functionality using a different approach ? Will it remain as flexible the decorator pattern?"
+                body: "Is there any other method way to create the same functionality using a different approach ? Will it remain as flexible the decorator pattern?",
+                answer: "Yes, Strategy pattern provides a way to flexibly attach behavior to a certain class also. However, we will not study it in this course."
             }
         ]
     },

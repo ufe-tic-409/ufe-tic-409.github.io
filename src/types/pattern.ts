@@ -14,6 +14,7 @@ export type Question = {
     answer?: string
     variant_name?: string
     code_link?: string
-    is_optional?: boolean,
+    is_optional?: boolean
     is_primary_implementation?: boolean
+    is_not_implemented?: boolean
 }
