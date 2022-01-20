@@ -24,8 +24,8 @@
                 <template #questions>
                     <ol class="list-decimal">
                         <li v-for="question in pattern.questions" class="mb-3">
-                            <Disclosure v-slot="{ open }" as="div"
-                                :class="`bg-gray-100 rounded-md p-2 ${open ? 'shadow-lg' : ''}`"
+                            <Disclosure as="div"
+                                :class="`bg-gray-100 rounded-md p-2`"
                             >
                                 <DisclosureButton class="text-left">
                                     <div class="flex flex-row justify-start items-center space-x-4">
