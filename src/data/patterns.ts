@@ -352,15 +352,17 @@ const patterns: { [key: string]: Pattern } = {
         diagram_link: "/src/assets/template-method-diagram.png",
         body: "You are building a game. In this game, you can <strong>Orcs</strong> and <strong>Monsters</strong>. Each of those AI enemies has a different strategy for each turn. However, if you take a careful look, you will see there are commonalities.",
         body_subtext: "<a href=\"https://refactoring.guru/design-patterns/template-method\">Exercise idea based on the example in this link.</a>",
-        starter_code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/template-method/src/main/java/io/gawish/templatemethod",
+        starter_code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/template-method-0/src/main/java/io/gawish/templatemethod",
         session: "5",
         questions: [
             {
-                body: "Start by copying the start code and reading it. What do you think about the code structure ?"
+                body: "Start by copying the start code and reading it. What do you think about the code structure ?",
+                answer: "While reading the code, you might observe that all the (Entity) [Orc & Monster] have a takeTurn method that have a similar structure. It begins with them collecting food, then attacking then building. What we can do in this case is extract those steps in the parent and have each one change only the steps it needs to change."
             },
             {
                 body: "How would you simplify this code by using the Template method pattern ?",
-                is_not_implemented: true
+                answer: "What we did here is that we made Entity an abstract class instead of an interface to enable some of it methods to have bodies. Then we created the 'algorithm' method (takeTurn) that contains the different steps (collectFood, attack, build), some of those steps had a default implementation (like attack) and some not. We finally, made the 'algorithm' (takeTurn) final so that no one of its children can override and thus no-one can change the order of the steps. The only thing that children can do now is override some of the steps if they need to.",
+                code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/template-method-1/src/main/java/io/gawish/templatemethod"
             }
         ]
     }
