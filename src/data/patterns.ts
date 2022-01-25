@@ -98,11 +98,25 @@ const patterns: { [key: string]: Pattern } = {
             }
         ]
     },
-    // "factory-method": {
-    //     title: "🛠 Factory method pattern",
-    //     intent: "Define an interface for creating an object, but let subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses."   ,
-    //     diagram_link: "/src/assets/factory-method.png",
-    // },
+    "factory-method": {
+        title: "🛠 Factory method pattern",
+        intent: "Define an interface for creating an object, but let subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses.",
+        diagram_link: "/src/assets/factory-method.png",
+        body: "You created your game, in the game, you have Orcs as monsters and each turn the Orcs can attack. In Halloween, you thought it would be nice to make a version of the game that works with Zombies as monsters instead of Orcs. How would you go about making the Monster type used in the game easy to change.",
+        starter_code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/factory-method-0/src/main/java/io/gawish/factorymethod",
+        session: "1",
+        questions: [
+            {
+                body: "Start by copying the start code and reading it. What do you think about the code ?",
+                answer: "The code is very bad because it duplicates a very big portion of the code."
+            },
+            {
+                body: "How would you go about improving the code by using the Factory method pattern ?",
+                answer: "You start by having a common interface for both monsters, we will call it Monster. Then instead of making the application depend on concrete Monsters like (Orc or Zombies), we will depend instead on the interface everywhere. And for the creation of the Monsters, instead of using 'new' we will create 'Creator' classes. This will make it very easy to switch between one type of monster and the other without having to duplicate a lot of code.",
+                code_link: "https://github.com/ufe-tic-409/design-patterns-examples/tree/factory-method-1/src/main/java/io/gawish/factorymethod"
+            }
+        ]
+    },
     "adapter": {
         title: "🔌 Adapter",
         intent: "Converts the interface of a class into another interface clients expect.",
