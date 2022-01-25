@@ -12,9 +12,9 @@
             <H3 class="mb-2 text-primary">Practical sessions</H3>
             <ul class="space-y-4">
                 <li>
-                    <router-link class="underline text-primary" to="uml">
+                    <a class="underline text-primary" target="_blank" href="/src/assets/uml.pdf">
                         UML Presentation
-                    </router-link>
+                    </a>
                     <div><small>22/11/2021</small></div>
                     <p>
                         Session 1 covers the basics of UML : Class diagram, Activity diagram, Sequence diagram & Use-case diagram
