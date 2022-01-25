@@ -108,7 +108,7 @@ const patterns: { [key: string]: Pattern } = {
         questions: [
             {
                 body: "Start by copying the start code and reading it. What do you think about the code ?",
-                answer: "The code is very bad because it duplicates a very big portion of the code."
+                answer: "The code is very bad because it duplicates a very big portion of the code. The code is not flexible as well, because it depends on Concrete classes  (Orc) instead of abstractions which make it harder to replace a type of monster with another"
             },
             {
                 body: "How would you go about improving the code by using the Factory method pattern ?",
